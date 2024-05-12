@@ -70,14 +70,20 @@
     <Content Include="Global.asax" />
     <Content Include="User\About.aspx" />
     <Content Include="User\Carpenter.aspx" />
+    <Content Include="User\CreatePost.aspx" />
     <Content Include="User\Dashboard.aspx" />
     <Content Include="User\Electrician.aspx" />
     <Content Include="User\Home.aspx" />
     <Content Include="User\Login.aspx" />
     <Content Include="User\Mechanic.aspx" />
+    <Content Include="User\MyPosts.aspx" />
+    <Content Include="User\newLogin.aspx" />
+    <Content Include="User\newPosts.aspx" />
     <Content Include="User\Painter.aspx" />
     <Content Include="User\Plumber.aspx" />
+    <Content Include="User\Posts.aspx" />
     <Content Include="User\Register.aspx" />
+    <Content Include="User\SignUp.aspx" />
     <Content Include="User\Technician.aspx" />
     <Content Include="User\Welder.aspx" />
     <Content Include="Web.config" />
@@ -100,6 +106,13 @@
     </Compile>
     <Compile Include="User\Carpenter.aspx.designer.cs">
       <DependentUpon>Carpenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\CreatePost.aspx.cs">
+      <DependentUpon>CreatePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\CreatePost.aspx.designer.cs">
+      <DependentUpon>CreatePost.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
@@ -136,6 +149,27 @@
     <Compile Include="User\Mechanic.aspx.designer.cs">
       <DependentUpon>Mechanic.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\MyPosts.aspx.cs">
+      <DependentUpon>MyPosts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\MyPosts.aspx.designer.cs">
+      <DependentUpon>MyPosts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\newLogin.aspx.cs">
+      <DependentUpon>newLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\newLogin.aspx.designer.cs">
+      <DependentUpon>newLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\newPosts.aspx.cs">
+      <DependentUpon>newPosts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\newPosts.aspx.designer.cs">
+      <DependentUpon>newPosts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\Painter.aspx.cs">
       <DependentUpon>Painter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,12 +184,25 @@
     <Compile Include="User\Plumber.aspx.designer.cs">
       <DependentUpon>Plumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\Posts.aspx.cs">
+      <DependentUpon>Posts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Posts.aspx.designer.cs">
+      <DependentUpon>Posts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Technician.aspx.cs">
       <DependentUpon>Technician.aspx</DependentUpon>
@@ -166,7 +213,6 @@
     </Compile>
     <Compile Include="User\UserMaster.Master.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User\UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
