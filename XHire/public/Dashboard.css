@@ -86,6 +86,7 @@ a:hover i{
 
 .container{
   display: flex;
+  justify-content: left;
 }
 
 * Sidebar
@@ -333,4 +334,46 @@ a:hover i{
     margin-right: 0;
     margin-bottom: 20px;
   }
+}
+
+.removal {
+  color: red;
+}
+
+.post {
+  width: 12%;
+  font-size: 15px;
+  text-align: right;
+  padding: 15px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #ace1af, #b0ebb4);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.post:hover {
+  background: linear-gradient(to right, #bff6c3, #e0fbe2);
+}
+
+.btn-post {
+  background: transparent;
+  cursor: pointer;
+}
+
+.fa {
+  color: #343a40;
+  cursor: pointer;
+  font-size: 30px;
+  position: fixed;
+  right: 135px;
+  bottom: 32px;
+  z-index: 2;
 }
