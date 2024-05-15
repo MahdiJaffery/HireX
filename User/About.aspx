@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/UserMaster.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="ProjectDB.User.About" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="..\XHire\public\aboutus.css">
 </asp:Content>
@@ -6,7 +7,8 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <a href="Home.aspx"><img src="..\XHire\public\X-Nitrate_nobg.png" alt="X-Nitrate Logo"></a>
+                <a href="Home.aspx">
+                    <img src="..\XHire\public\X-Nitrate_nobg.png" alt="X-Nitrate Logo"></a>
             </div>
             <ul class="nav-links">
                 <li class="dropdown">
@@ -21,13 +23,13 @@
                         <p><a href="Welder.aspx">Welder</a></p>
                     </ul>
                 </li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Reviews</a></li>
+                <li><a href="About.aspx">About</a></li>
+                <li><a href="Dashboard.aspx">Dashboard</a></li>
+                <li><a href="newPosts.aspx">Posts</a></li>
             </ul>
             <div class="login">
-                <a href="Login.aspx" class="btn">Log In</a>
-                <a href="Login.aspx" class="btn signup">Sign Up</a>
+                <asp:Label ID="LoginVisibility" Visible="true" runat="server"><a href="Login.aspx" class="btn">Log In</a></asp:Label>
+                <asp:Label ID="SignUpVisibility" Visible="true" runat="server"><a href="SignUp.aspx" class="btn signup">Sign Up</a></asp:Label>
             </div>
         </div>
     </nav>

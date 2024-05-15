@@ -7,38 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectDB.User
+namespace ProjectDB
 {
 
 
-    public partial class Electrician
+    public partial class OTPCheck
     {
 
         /// <summary>
-        /// LoginVisibility control.
+        /// OTP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LoginVisibility;
+        protected global::System.Web.UI.WebControls.TextBox OTP;
 
         /// <summary>
-        /// SignUpVisibility control.
+        /// SubmitOTP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SignUpVisibility;
+        protected global::System.Web.UI.WebControls.Button SubmitOTP;
 
         /// <summary>
-        /// postRepeater control.
+        /// ErrOTP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater postRepeater;
+        protected global::System.Web.UI.WebControls.Label ErrOTP;
     }
 }

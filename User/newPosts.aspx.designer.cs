@@ -11,7 +11,7 @@ namespace ProjectDB.User
 {
 
 
-    public partial class Electrician
+    public partial class newPosts
     {
 
         /// <summary>

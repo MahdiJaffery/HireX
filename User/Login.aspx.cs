@@ -20,72 +20,38 @@ namespace ProjectDB.User
 
         }
 
-        protected void btnRegister_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                string usernameOrEmail = username.Text.Trim();
-                string pass = password.Text.Trim();
-
-                if (true)
-                {
-                    con = new SqlConnection(str);
-                    string query = "INSERT INTO newUsers (email, pass) VALUES (@Email, @Password)";
-                    cmd = new SqlCommand(query, con);
-                    //cmd.Parameters.AddWithValue("@Username", username.Value.Trim());
-                    cmd.Parameters.AddWithValue("@Email", usernameOrEmail);
-                    cmd.Parameters.AddWithValue("@Password", pass);
-
-                    con.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        // Registration successful
-                        lblMsg.Visible = true;
-                        lblMsg.Text = "Registration successful!";
-                        lblMsg.CssClass = "success-message";
-                        ClearFields();
-                        Response.Redirect("Dashboard.aspx");
-                    }
-                    else
-                    {
-                        // Registration failed
-                        lblMsg.Visible = true;
-                        lblMsg.Text = "Registration failed. Please try again later.";
-                        lblMsg.CssClass = "error-message";
-                    }
-                }
-                else
-                {
-                    // Passwords do not match
-                    lblMsg.Visible = true;
-                    lblMsg.Text = "Passwords do not match.";
-                    lblMsg.CssClass = "error-message";
-                }
-            }
-            catch (Exception ex)
-            {
-                lblMsg.Visible = true;
-                lblMsg.Text = "User already registered with this email. Kindly Login";
-                lblMsg.CssClass = "error-message";
-                ClearFields();
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
         public void btnLogin_Click(object sender, EventArgs e)
         {
-            string usernameOrEmail = username.Text.Trim();
-            string pass = password.Text.Trim();
+            //string usernameOrEmail = UsernameInput.Text.Trim();
+            //string pass = Password.Text.Trim();
 
             // SQL query to check if the username/email and password match any record in the database
             string query = "SELECT COUNT(*) FROM Users WHERE (Username = @UsernameOrEmail OR Email = @UsernameOrEmail) AND Password = @Password";
             //string query = "Insert into newUsers (email, pass) Values (@UsernameOrEmail, @UsernameOrEmail)";
-
+            string getUserame = "Select Username from Users where Users.Email = @Email OR Username = @Username";
             // Using the existing SqlConnection from Contact.aspx
+            string Username = "";
+
+            string usernameOrEmail = UsernameInput.Text.Trim();
+            string pass = Password.Text.Trim();
+
+            using (con = new SqlConnection(str))
+            {
+                using (cmd = new SqlCommand(getUserame, con))
+                {
+                    cmd.Parameters.AddWithValue("@Email", usernameOrEmail);
+                    cmd.Parameters.AddWithValue("@Username", usernameOrEmail);
+                    try
+                    {
+                        con.Open();
+                        Username = (string)cmd.ExecuteScalar();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
             using (con = new SqlConnection(str))
             {
                 using (cmd = new SqlCommand(query, con))
@@ -100,33 +66,76 @@ namespace ProjectDB.User
 
                         if (count == 1)
                         {
-                            // Authentication successful, redirect to authenticated page
-                            //Response.Redirect("AuthenticatedPage.aspx");
-                            lblMsg.Visible = true;
-                            lblMsg.Text = "Success";
+                            Session["Username"] = Username;
+                            Session["Status"] = "Online";
+
+                            Session["UserID"] = getUserID(Username);
+
                             Response.Redirect("Dashboard.aspx");
                         }
                         else
                         {
-                            // Authentication failed, display error message
-                            lblMsg.Visible = true;
-                            lblMsg.Text = "Invalid username/email or password.";
+                            int valid;
+                            string subQuery = "Select Count(*) from Users where Email = @Email OR Username = @Email";
+
+                            using (con = new SqlConnection(str))
+                            {
+                                using (cmd = new SqlCommand(subQuery, con))
+                                {
+                                    cmd.Parameters.AddWithValue("@Email", usernameOrEmail);
+                                    con.Open();
+
+                                    valid = (int)cmd.ExecuteScalar();
+
+                                    if (valid == 1)
+                                    {
+                                        ErrRes.Text = "Invalid Password for " + usernameOrEmail;
+                                    }
+                                }
+                            }
+
+                            if (valid == 0)
+                                ErrRes.Text = "Email/Username: " + usernameOrEmail + " does not Exist at HireX";
+
+                            ErrRes.Visible = true;
+                            //// Authentication failed, display error message
+                            //lblMsg.Visible = true;
+                            //lblMsg.Text = "Invalid username/email or password.";
+                            Session["Status"] = null;
                         }
                     }
                     catch (Exception ex)
                     {
-                        lblMsg.Visible = true;
-                        lblMsg.Text = "An error occurred: " + ex.Message;
+                        //lblMsg.Visible = true;
+                        //lblMsg.Text = "An error occurred: " + ex.Message;
+                    }
+                    finally
+                    {
+                        con.Close();
                     }
                 }
             }
         }
+
+        private int getUserID(string username)
+        {
+            con = new SqlConnection(str);
+
+            string Query = "Select UserID from Users where Username = @Username";
+
+            cmd = new SqlCommand(Query, con);
+
+            cmd.Parameters.AddWithValue("@Username", username);
+            con.Open();
+
+            return (int)cmd.ExecuteScalar();
+        }
         private void ClearFields()
         {
-            username.Text = String.Empty;
-            //email.Value = String.Empty;
-            password.Text = String.Empty;
-            //Password1.Value = String.Empty;
+            //username.Text = String.Empty;
+            ////email.Value = String.Empty;
+            //password.Text = String.Empty;
+            ////Password1.Value = String.Empty;
         }
     }
 }

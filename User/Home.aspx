@@ -36,12 +36,12 @@
                         </ul>
                     </li>
                     <li><a href="About.aspx">About</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Reviews</a></li>
+                    <li><a href="Dashboard.aspx">Dashboard</a></li>
+                    <li><a href="newPosts.aspx">Posts</a></li>
                 </ul>
                 <div class="login">
-                    <a href="Login.aspx" class="btn">Log In</a>
-                    <a href="Login.aspx" class="btn signup">Sign Up</a>
+                    <asp:Label ID="LoginVisibility" Visible="true" runat="server"><a href="Login.aspx" class="btn">Log In</a></asp:Label>
+                    <asp:Label ID="SignUpVisibility" Visible="true" runat="server"><a href="SignUp.aspx" class="btn signup">Sign Up</a></asp:Label>
                 </div>
             </div>
         </nav>
@@ -118,7 +118,8 @@
                                 <p>Experienced service provider with over 10 years in the industry. Specializes in web development.</p>
                                 <br>
                                 <p>
-                                    <medium>Price: $50/hr &nbsp; &nbsp; &nbsp; Location: New York</medium></p>
+                                    <medium>Price: $50/hr &nbsp; &nbsp; &nbsp; Location: New York</medium>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -139,7 +140,8 @@
                                 <p>Graphic designer with a passion for creativity. Offering design solutions for businesses.</p>
                                 <br>
                                 <p>
-                                    <medium>Price: $40/hr &nbsp; &nbsp; &nbsp; Location: Los Angeles</medium></p>
+                                    <medium>Price: $40/hr &nbsp; &nbsp; &nbsp; Location: Los Angeles</medium>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -160,7 +162,8 @@
                                 <p>Marketing expert with a track record of successful campaigns. Ready to boost your brand.</p>
                                 <br>
                                 <p>
-                                    <medium>Price: $60/hr &nbsp; &nbsp; &nbsp; Location: Chicago</medium></p>
+                                    <medium>Price: $60/hr &nbsp; &nbsp; &nbsp; Location: Chicago</medium>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -181,7 +184,8 @@
                                 <p>Experienced photographer capturing life's moments. Book your session now to get discount.</p>
                                 <br>
                                 <p>
-                                    <medium>Price: $80/hr &nbsp; &nbsp; &nbsp; Location: San Francisco</medium></p>
+                                    <medium>Price: $80/hr &nbsp; &nbsp; &nbsp; Location: San Francisco</medium>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -202,7 +206,8 @@
                                 <p>Virtual assistant providing administrative support to businesses to encourage them. Hire now!</p>
                                 <br>
                                 <p>
-                                    <medium>Price: $30/hr &nbsp; &nbsp; &nbsp; Location: Miami</medium></p>
+                                    <medium>Price: $30/hr &nbsp; &nbsp; &nbsp; Location: Miami</medium>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -223,7 +228,8 @@
                                 <p>Software engineer specializing in app development. Transform your ideas into reality.</p>
                                 <br>
                                 <p>
-                                    <medium>Price: $70/hr &nbsp; &nbsp; &nbsp; Location: Seattle</medium></p>
+                                    <medium>Price: $70/hr &nbsp; &nbsp; &nbsp; Location: Seattle</medium>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -238,17 +244,21 @@
                 <div class="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                        <asp:TextBox ID="Name" runat="server" Visible="true"></asp:TextBox>
+                        <%--<input type="text" id="NameReview" name="name" placeholder="Enter your name">--%>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                        <asp:TextBox ID="Email" runat="server" Visible="true"></asp:TextBox>
+                        <%--<input type="email" id="EmailReview" name="email" placeholder="Enter your email">--%>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Write your message here"></textarea>
+                        <asp:TextBox ID="Message" runat="server" Visible="true"></asp:TextBox>
+                        <%--<textarea id="message" name="MessageReview" placeholder="Write your message here"></textarea>--%>
                     </div>
-                    <button type="submit" class="contact-btn">Submit</button>
+                    <asp:Button ID="Submit" runat="server" Visible="true" Text="Submit" OnClick="Submit_Feedback" CssClass="contact-btn" />
+                    <%--<button type="submit" class="contact-btn">Submit</button>--%>
                 </div>
             </div>
         </section>

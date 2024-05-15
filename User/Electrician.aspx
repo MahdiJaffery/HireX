@@ -16,22 +16,22 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-link">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a href="Technician.aspx">Technician</a></li>
-                        <li><a href="Plumber.aspx">Plumber</a></li>
-                        <li><a href="Electrician.aspx">Electrician</a></li>
-                        <li><a href="Carpenter.aspx">Carpenter</a></li>
-                        <li><a href="Mechanic.aspx">Mechanic</a></li>
-                        <li><a href="Painter.aspx">Painter</a></li>
-                        <li><a href="Welder.aspx">Welder</a></li>
+                        <p><a href="Technician.aspx">Technician</a></p>
+                        <p><a href="Plumber.aspx">Plumber</a></p>
+                        <p><a href="Electrician.aspx">Electrician</a></p>
+                        <p><a href="Carpenter.aspx">Carpenter</a></p>
+                        <p><a href="Mechanic.aspx">Mechanic</a></p>
+                        <p><a href="Painter.aspx">Painter</a></p>
+                        <p><a href="Welder.aspx">Welder</a></p>
                     </ul>
                 </li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Reviews</a></li>
+                <li><a href="About.aspx">About</a></li>
+                <li><a href="Dashboard.aspx">Dashboard</a></li>
+                <li><a href="newPosts.aspx">Posts</a></li>
             </ul>
             <div class="login">
-                <a href="Login.aspx" class="btn">Log In</a>
-                <a href="Login.aspx" class="btn signup">Sign Up</a>
+                <asp:Label ID="LoginVisibility" Visible="true" runat="server"><a href="Login.aspx" class="btn">Log In</a></asp:Label>
+                <asp:Label ID="SignUpVisibility" Visible="true" runat="server"><a href="SignUp.aspx" class="btn signup">Sign Up</a></asp:Label>
             </div>
         </div>
     </nav>
@@ -202,7 +202,7 @@
 
     <h1 class="newposth1">Electrician Services</h1>
 
-    <section class="new-post">
+    <%--<section class="new-post">
         <div class="newpostcontainer">
             <div class="newpost">
                 <img src="..\XHire\public\t1.png" alt="Post Image">
@@ -338,5 +338,47 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--%>
+    <asp:Repeater ID="postRepeater" runat="server">
+        <ItemTemplate>
+            <section class="new-post">
+                <div class="newpostcontainer">
+                    <div class="newpost">
+                        <img src="..\XHire\public\t1.png" alt="Post Image" />
+                        <%--<img src='<%# Eval("PostImage") %>' alt="Post Image" />--%>
+                        <div class="newpost-content">
+                            <div class="newpost-details">
+                                <h3><%# Eval("PostTitle") %></h3>
+                                <p><%# Eval("PostContent") %></p>
+
+                            </div>
+                            <div class="ratings-orders">
+                                <p><strong><%#Eval("Username") %></strong></p>
+                                <p>4.2 <i class="fas fa-star checked"></i></p>
+                                <p>5,739 Orders</p>
+                                <p>Service: <%#Eval("Service") %></p>
+                            </div>
+                            <div class="Date">
+                                <br /> 
+                                <p><%#Eval("PostDate") %></p>
+                            </div>
+                        </div>
+                        <div class="post-actions">
+                            <button class="like-btn"><i class="far fa-thumbs-up"></i>Like</button>
+                            <button class="comment-btn"><i class="far fa-comment"></i>Comment</button>
+                            <asp:Button ID="NegititateID" runat="server" CssClass="Nego" Text="Negotiate" OnClick="Negotiate_Click" CommandArgument='<%# Eval("PostID") %>' />
+                            <i class="fas fa-handshake"></i>
+                            <%--<button class="negotiate-btn"><i class="fas fa-handshake"></i>Negotiate</button>--%>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </ItemTemplate>
+    </asp:Repeater>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hire-X Inc. All rights reserved.</p>
+        </div>
+    </footer>
 </asp:Content>

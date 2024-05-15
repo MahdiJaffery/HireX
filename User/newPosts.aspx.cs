@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,8 +10,9 @@ using System.Web.UI.WebControls;
 
 namespace ProjectDB.User
 {
-    public partial class Painter : System.Web.UI.Page
+    public partial class newPosts : System.Web.UI.Page
     {
+        //int UserID;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Status"] == null)
@@ -41,7 +42,7 @@ namespace ProjectDB.User
         {
             // Define connection string and SQL query
             string connectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
-            string Query = "Select * from Posts where Service = 'Painter' order by PostID desc";
+            string Query = "Select * from Posts order by PostID desc";
 
             // Create DataTable to store product data
             DataTable productData = new DataTable();
@@ -67,6 +68,14 @@ namespace ProjectDB.User
             if (Session["Status"] == null)
             {
                 Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Button btn = (Button)sender;
+                int postID = Convert.ToInt32(btn.CommandArgument);
+
+                Session["PostToReply"] = postID;
+                Response.Redirect("Replies.aspx");
             }
         }
     }

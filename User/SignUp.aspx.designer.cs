@@ -11,116 +11,98 @@ namespace ProjectDB.User
 {
 
 
-    public partial class Dashboard
+    public partial class SignUp
     {
 
         /// <summary>
-        /// DeleteAccount control.
+        /// username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteAccount;
+        protected global::System.Web.UI.WebControls.TextBox username;
 
         /// <summary>
-        /// Session_Timeout control.
+        /// ErrUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Session_Timeout;
+        protected global::System.Web.UI.WebControls.Label ErrUsername;
 
         /// <summary>
-        /// lblName control.
+        /// Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
-        /// Order1 control.
+        /// ErrEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Order1;
+        protected global::System.Web.UI.WebControls.Label ErrEmail;
 
         /// <summary>
-        /// Order1Customer control.
+        /// Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Order1Customer;
+        protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
-        /// Order1Amount control.
+        /// ErrPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Order1Amount;
+        protected global::System.Web.UI.WebControls.Label ErrPassword;
 
         /// <summary>
-        /// Order2 control.
+        /// ConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Order2;
+        protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
 
         /// <summary>
-        /// Order2Customer control.
+        /// ErrConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Order2Customer;
+        protected global::System.Web.UI.WebControls.Label ErrConfirmPassword;
 
         /// <summary>
-        /// Order2Amount control.
+        /// Phone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Order2Amount;
+        protected global::System.Web.UI.WebControls.TextBox Phone;
 
         /// <summary>
-        /// Overall control.
+        /// ErrPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Overall;
-
-        /// <summary>
-        /// Rating control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Rating;
-
-        /// <summary>
-        /// Name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Name;
+        protected global::System.Web.UI.WebControls.Label ErrPhone;
 
         /// <summary>
         /// Address control.
@@ -129,42 +111,42 @@ namespace ProjectDB.User
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Address;
+        protected global::System.Web.UI.WebControls.TextBox Address;
 
         /// <summary>
-        /// Contact control.
+        /// ErrAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Contact;
+        protected global::System.Web.UI.WebControls.Label ErrAddress;
 
         /// <summary>
-        /// TotalEarnings control.
+        /// btnSignUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TotalEarnings;
+        protected global::System.Web.UI.WebControls.Button btnSignUp;
 
         /// <summary>
-        /// CurrentBalance control.
+        /// lblErr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CurrentBalance;
+        protected global::System.Web.UI.WebControls.Label lblErr;
 
         /// <summary>
-        /// transactions control.
+        /// lblMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label transactions;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 }

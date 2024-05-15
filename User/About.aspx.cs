@@ -11,7 +11,16 @@ namespace ProjectDB.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Status"] == null)
+            {
+                LoginVisibility.Visible = true;
+                SignUpVisibility.Visible = true;
+            }
+            else
+            {
+                LoginVisibility.Visible = false;
+                SignUpVisibility.Visible = false;
+            }
         }
     }
 }

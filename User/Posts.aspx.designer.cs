@@ -11,7 +11,7 @@ namespace ProjectDB.User
 {
 
 
-    public partial class Electrician
+    public partial class Posts
     {
 
         /// <summary>
@@ -31,14 +31,5 @@ namespace ProjectDB.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label SignUpVisibility;
-
-        /// <summary>
-        /// postRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater postRepeater;
     }
 }

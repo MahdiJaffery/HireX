@@ -128,21 +128,22 @@
             <h2>Login</h2>
             <form id="loginForm" onsubmit="return submitForm()">
                 <label for="username">Username or Email</label>
-                <asp:TextBox ID="username" runat="server" CssClass="form-control" required="required"></asp:TextBox>
+                <asp:TextBox ID="UsernameInput" runat="server" CssClass="form-control" required="required" Placeholder="Email/Username"></asp:TextBox>
 
                 <label for="password">Password</label>
-                <asp:TextBox ID="password" runat="server" TextMode="Password" CssClass="form-control" required="required"></asp:TextBox>
+                <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="form-control" required="required" Placeholder="Password"></asp:TextBox>
 
                 <!-- Add CssClass attribute with the appropriate class name -->
+                <asp:Label ID="ErrRes" runat="server" Visible="false" Text=""></asp:Label>
                 <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="btn btn-primary" />
             </form>
-            <p>Don't have an account? <a href="Register.aspx">Register</a></p>
+            <p>Don't have an account? <a href="SignUp.aspx">Register</a></p>
             <div class="outputMsg" style="display: none;">
                 <asp:Label ID="lblMsg" runat="server" Text="Message has been sent"></asp:Label>
             </div>
         </div>
 
-       <%-- <script>
+        <%-- <script>
             function submitForm() {
                 // Get username and password values
                 var username = document.getElementById('<%= username.ClientID %>').value;

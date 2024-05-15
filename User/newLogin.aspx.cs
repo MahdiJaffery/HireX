@@ -5,16 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-class User {
-    string userName;
-}
-
-
 namespace ProjectDB.User
 {
-    public partial class UserMaster : System.Web.UI.MasterPage
+    public partial class newLogin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSubmitLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnSubmitSignup_Click(object sender, EventArgs e)
         {
 
         }
