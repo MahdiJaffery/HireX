@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="User\OTPCheck.aspx" />
     <Content Include="User\About.aspx" />
     <Content Include="User\Carpenter.aspx" />
     <Content Include="User\CreatePost.aspx" />
@@ -83,6 +84,7 @@
     <Content Include="User\Plumber.aspx" />
     <Content Include="User\Posts.aspx" />
     <Content Include="User\Register.aspx" />
+    <Content Include="User\Replies.aspx" />
     <Content Include="User\SignUp.aspx" />
     <Content Include="User\Technician.aspx" />
     <Content Include="User\Welder.aspx" />
@@ -91,6 +93,13 @@
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="User\OTPCheck.aspx.cs">
+      <DependentUpon>OTPCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OTPCheck.aspx.designer.cs">
+      <DependentUpon>OTPCheck.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\About.aspx.cs">
@@ -196,6 +205,13 @@
     </Compile>
     <Compile Include="User\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Replies.aspx.cs">
+      <DependentUpon>Replies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Replies.aspx.designer.cs">
+      <DependentUpon>Replies.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
