@@ -121,8 +121,6 @@ namespace ProjectDB.User
 
         private void GenerateOTP(int OTP, string username, string toEmail)
         {
-            string fromMail = "registrarhirex@gmail.com";
-            string fromPassword = "fvdmnukxjnnfkeim";
 
             MailMessage message = new MailMessage();
 

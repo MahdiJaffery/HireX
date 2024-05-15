@@ -81,8 +81,6 @@ namespace ProjectDB
 
         private void SendConfirmation(string username, string toEmail)
         {
-            string fromMail = "registrarhirex@gmail.com";
-            string fromPassword = "fvdmnukxjnnfkeim";
 
             MailMessage message = new MailMessage();
 
