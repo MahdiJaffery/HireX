@@ -627,7 +627,8 @@ body, h1, h2, h3, p, ul, li {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: -4.5%;
+    margin-top: 7%;
+    margin-right: 2%;
   }
   
   .post-actions button {
@@ -665,4 +666,12 @@ body, h1, h2, h3, p, ul, li {
     text-align: center;
     padding: 5px 0;
     width: 100%;
+  }
+
+  .Date {
+    position: absolute;
+    
+    margin-right: 10px;
+    margin-left: 65%;
+    margin-bottom: 30px;
   }
